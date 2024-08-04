@@ -26,15 +26,12 @@
 
 .login-window {
     box-sizing: border-box;
-
     z-index: 1;
-
     position: absolute;
     width: 520px;
     height: 712px;
     left: calc(50% - 520px/2);
     top: calc(50% - 712px/2);
-
     background: rgba(17, 25, 40, 0.5);
     border-radius: 15px;
     backdrop-filter: blur(15px);
@@ -47,7 +44,6 @@
     position: absolute;
     left: calc(50% - 111px/2 - 0.5px);
     top: 0px;
-
     font-family: 'Uxum Grotesque';
     font-style: normal;
     font-weight: 250;
@@ -63,27 +59,22 @@
     position: absolute;
     left: calc(50% - 160px/2 - 1px);
     top: 70px;
-
     font-family: 'Uxum Grotesque';
     font-style: normal;
     font-weight: 250;
     font-size: 24px;
     line-height: 24px;
-
     color: rgba(255, 255, 255, 0.5);
 }
 
 .login-window .input-box #email-id-field {
     /* Email Id Field */
-
     box-sizing: border-box;
-
     position: absolute;
     width: 420px;
     height: 60px;
     left: calc(50% - 420px/2);
     top: 179px;
-
     background: #111928;
     border: 1px solid rgba(255, 255, 255, 0.125);
     border-radius: 10px;
@@ -91,19 +82,16 @@
 
 #email-id-field::placeholder {
     /* Email Address */
-
     position: absolute;
     width: 98px;
     height: 16px;
     left: 22px;
     top: calc(50% - 16px/2);
-
     font-family: 'Uxum Grotesque';
     font-style: normal;
     font-weight: 250;
     font-size: 16px;
     line-height: 16px;
-
     color: rgba(255, 255, 255, 0.5);
 }
 
@@ -311,4 +299,28 @@
 .login-window #login-button-with-google:hover {
     background-color: #111928;
     transition: 300ms;
+}
+
+
+
+@media screen and (max-width:426px) {
+    .login-window{
+        transform: scale(0.7);
+    }
+    .navbar{
+        display: none;
+    }
+    #email-id-field,
+    #password-field{
+        padding-left: 15px;
+        color: white;
+        font-size: 6vw;
+    }
+}
+
+@media screen and (max-width:376px) {
+    .login-window{
+        transform: scale(0.6);
+    }
+
 }
