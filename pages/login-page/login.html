@@ -1,60 +1,70 @@
 <!DOCTYPE html>
-<html lang="en" class="height-full">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../components/star-animation.css">
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="../components/login-button.css">
+    <link rel="stylesheet" href="../components/background-grid-animation.css">
+    <title>Login</title>
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navbar-logo">
-            <img src="../../resources/svgs/college-buddy-logo-01.svg" alt="logo">
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-logo-div">
+            <a href="../../index.html"><img id="nav-logo" src="../../resources/college-buddy-logos/college-buddy-logo-full.svg"
+                alt="college-buddy-logo"></a>
         </div>
-        <div class="navbar-button">
-            <!-- <button id="sign-up">sign up</button> -->
+        <div class="nav-sign-in-button-div">
+            <a href=""><button id="nav-sign-in-button">Sign in</button></a>
         </div>
-    </div>
+    </nav>
+
+    <!-- LOGIN WINDOW -->
     <div class="login-window">
         <div class="login-window-title">
             <h1>Login</h1>
-            <h3 id="">Welcome back!</h3>
+            <h3>Welcome back!</h3>
         </div>
 
         <div class="input-box">
-            <input id="email-id-field" type="text" placeholder="Email Address">
-            <input id="password-field" type="password" placeholder="Password">
-            <div class="reset-password-div">
-                <p id="reset-line">Don’t you remember password?</p>
-                <a id="reset-line-button" href="">Reset Here</a>
-            </div>
+            <form class="input-box-form">
+                <input id="email-id-field" type="text" placeholder="Email Address">
+                <input id="password-field" type="password" placeholder="Password">
+            </form>
         </div>
-        
+
+        <div class="reset-password-div">
+            <p id="reset-line">Don't you remember password?</p>
+            <a id="reset-line-button" href="">Reset Here</a>
+        </div>
+
         <div class="login-button-div">
             <button id="login-button">Start Learning Now</button>
-            <p>New Here?<a href="../register-page/register.html">Create your account now</a></p>
+            <p>New Here?<a href="../register-page/register.html"> Create your account now</a></p>
         </div>
+
         <div class="divider-div">
             <hr id="divider-1">
             <p>or</p>
             <hr id="divider-2">
         </div>
+
         <div class="login-button-with-google-div">
-            <button id="login-button-with-google"><img src="../..//resources/svgs/google-logo.svg" alt="">Continue with
-                Google</button>
+            <button id="hover-state" class="login-button-with-google">
+                <svg id="hover-state" width="20" height="20" viewBox="0 0 17 17" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.65604 0.517578C4.37281 0.517578 0.899902 4.04651 0.899902 8.39906C0.899902 12.7516 4.37281 16.2805 8.65604 16.2805C15.1238 16.2805 16.581 10.177 15.9743 7.08548H15.1149H13.6497H8.65351V9.71264H13.6535C13.0787 11.9774 11.061 13.6534 8.65351 13.6534C5.79889 13.6534 3.48444 11.3008 3.48444 8.39906C3.48444 5.49736 5.79889 3.14474 8.65351 3.14474C9.9516 3.14474 11.1341 3.63454 12.0419 4.43779L13.8781 2.57261C12.4993 1.29581 10.6675 0.517578 8.65604 0.517578Z" fill="white" />
+                </svg>
+                Continue with Google</button>
         </div>
+
     </div>
-    <div class="signup-space">
-        <div class="signup-stars"></div>
-        <div class="signup-stars"></div>
-        <div class="signup-stars"></div>
-        <div class="signup-stars"></div>
-        <div class="signup-stars"></div>
-        <div class="signup-stars"></div>
-    </div>
+
+    <div class="background"></div>
+    <script src="login.js"></script>
+    <script src="../components/background-grid-animation.js"></script>
 </body>
 
 </html>

@@ -1,182 +1,225 @@
 @font-face {
-    font-family: 'Uxum-Grotesque';
-    src: url(/resources/fonts/UxumGrotesqueGX.ttf);
-    font-style: normal;
-    font-weight: 400;
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
+    src: url(resources/fonts/UxumGrotesqueGX.ttf);
 }
 
-.navbar {
-    /* Invisible Nav */
-    position: absolute;
+:root {
+    --white-100: #FFFFFF;
+    --white-50: rgba(255, 255, 255, 0.5);
+    --white-25: rgba(255, 255, 255, 0.25);
+    --white-12-5: rgba(255, 255, 255, 0.125);
+    --green-primary: #79B058;
+    --grey-secondary: #1E1E1E;
+    --yellow-links: #EFA83E;
+    --dark-blue: #263238;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* NAVBAR */
+nav {
     width: 100%;
     height: 120px;
-}
-
-.navbar .navbar-logo img {
-    /* Group */
-    height: 5vw;
-    position: absolute;
-    left: 5.56%;
-    right: 85.17%;
-    top: 26.34%;
-    bottom: 17.7%;
-}
-
-
-
-.login-window {
     box-sizing: border-box;
-    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav #nav-logo {
+
+    width: 204px;
+    height: 76.77px;
+}
+
+nav #nav-sign-in-button {
+
+    width: 152px;
+    height: 64px;
+    background: var(--green-primary);
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Uxum Grotesque', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+
+    color: var(--white-100);
+    transition: background-color 300ms ease;
+}
+
+nav #nav-sign-in-button:hover {
+    background-color: var(--grey-secondary);
+}
+
+/* LOGIN WINDOW */
+.login-window {
+
     position: absolute;
-    width: 520px;
-    height: 712px;
-    left: calc(50% - 520px/2);
-    top: calc(50% - 712px/2);
-    background: rgba(17, 25, 40, 0.5);
-    border-radius: 15px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 416px;
+    height: 575px;
+
+    background: var(--dark-blue);
+    border: 1px solid var(--green-primary);
+    border-radius: 12px;
+}
+
+.login-window .login-window-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 40px;
+    gap: 5px;
 }
 
 .login-window h1 {
     /* Login */
-    position: absolute;
-    left: calc(50% - 111px/2 - 0.5px);
-    top: 0px;
-    font-family: 'Uxum Grotesque';
+
+    font-family: 'Uxum Grotesque', Arial, sans-serif;
     font-style: normal;
     font-weight: 250;
-    font-size: 48px;
-    line-height: 49px;
-    /* identical to box height */
-    color: #FFFFFF;
+    font-size: 38.4px;
+
+    color: var(--white-100);
 }
 
 .login-window h3 {
     /* Welcome back! */
 
-    position: absolute;
-    left: calc(50% - 160px/2 - 1px);
-    top: 70px;
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 250;
-    font-size: 24px;
-    line-height: 24px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 19.2px;
+
+    color: var(--white-50);
+}
+
+.login-window .input-box {
+    padding-top: 40px;
+}
+
+.login-window .input-box .input-box-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .login-window .input-box #email-id-field {
     /* Email Id Field */
     box-sizing: border-box;
-    position: absolute;
-    width: 420px;
-    height: 60px;
-    left: calc(50% - 420px/2);
-    top: 179px;
-    background: #111928;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    border-radius: 10px;
+    width: 336px;
+    height: 48px;
+    background: transparent;
+    border: 1px solid var(--white-12-5);
+    border-radius: 8px;
 }
 
 #email-id-field::placeholder {
     /* Email Address */
-    position: absolute;
-    width: 98px;
-    height: 16px;
-    left: 22px;
-    top: calc(50% - 16px/2);
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 250;
     font-size: 16px;
     line-height: 16px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--white-50);
 }
 
 .login-window .input-box #password-field {
     /* Password Field */
 
     box-sizing: border-box;
-
-    position: absolute;
-    width: 420px;
-    height: 60px;
-    left: 50px;
-    top: 264px;
-
-    background: #111928;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    border-radius: 10px;
+    width: 336px;
+    height: 48px;
+    background: transparent;
+    border: 1px solid var(--white-12-5);
+    border-radius: 8px;
 }
 
 #password-field::placeholder {
     /* Password */
 
-    position: absolute;
-    width: 69px;
-    height: 16px;
-    left: 22px;
-    top: calc(50% - 16px/2);
-
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 250;
     font-size: 16px;
     line-height: 16px;
 
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--white-50);
 }
 
 .login-window .input-box input[type=text] {
     /* input field text */
+    padding-left: 17.6px;
 
-    position: absolute;
-    width: 228px;
-    height: 16px;
-    left: 22px;
-    top: calc(50% - 16px/2);
-
-    padding-left: 22px;
-
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 250;
     font-size: 16px;
-    line-height: 16px;
 
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--white-50);
 }
 
-/* .login-window .input-box .reset-password-div {
-    top: 334px;
-} */
+.login-window .input-box input[type=password] {
+    /* input field text */
+    padding-left: 17.6px;
 
-.login-window .input-box .reset-password-div #reset-line {
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 16px;
+
+    color: var(--white-50);
+}
+
+.login-window .reset-password-div {
+    margin-top: 8px;
+    width: 336px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-window .reset-password-div #reset-line {
     /* Don’t you remember password? */
 
-    position: absolute;
-    left: calc(50% - 221px/2 - 99.5px);
-    top: 334px;
 
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 250;
     font-size: 16px;
     line-height: 16px;
 
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--white-50);
 }
 
-.login-window .input-box .reset-password-div #reset-line-button {
+.login-window .reset-password-div #reset-line-button {
     /* Reset Here */
 
-    position: absolute;
-    left: calc(50% - 77px/2 + 170.5px);
-    top: 350px;
-
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -184,25 +227,53 @@
 
     text-decoration: none;
 
-    color: #FFFFFF;
+    color: var(--white-100);
+}
+
+.login-window .login-button-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    gap: 8px;
+}
+
+.login-window .login-button-div #login-button {
+    /* Frame 10 */
+
+    width: 336px;
+    height: 48px;
+    left: 40px;
+    top: 318.8px;
+
+    background: var(--green-primary);
+    border: none;
+    border-radius: 8px;
+
+    /* Start Learning Now */
+
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+    color: var(--grey-secondary);
+}
+
+.login-window .login-button-div #login-button:hover {
+    color: var(--white-50);
+    background-color: var(--grey-secondary);
+    transition: 300ms;
 }
 
 .login-window .login-button-div p {
-    /* New here? Create your account now */
 
-    position: absolute;
-    left: calc(50% - 255px/2 - 0.5px);
-    top: 469px;
-
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 250;
     font-size: 16px;
-    line-height: 16px;
 
-    color: rgba(255, 255, 255, 0.5);
-
-
+    color: var(--white-50);
 }
 
 
@@ -210,62 +281,54 @@
     text-decoration: none;
     /* New here? Create your account now */
 
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 16px;
+    color: var(--yellow-links);
 }
 
 .login-window .divider-div {
-    /* Divider */
+    width: 336px;
+    height: 12.8px;
 
-    position: absolute;
-    width: 420px;
-    height: 16px;
-    left: 50px;
-    top: 527px;
+    padding-top: 35px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .login-window .divider-div #divider-1 {
-    /* Line 49 */
 
-    width: 174px;
-    float: left;
-
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    width: 130px;
+    border: 0.8px solid var(--white-12-5);
 
 }
 
 .login-window .divider-div #divider-2 {
 
-
-    width: 174px;
-    float: right;
-
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    width: 130px;
+    border: 0.8px solid var(--white-12-5);
 }
 
 .login-window .divider-div p {
-    /* or */
 
-    position: absolute;
-    float: centre;
-    left: 202px;
-    top: -17px;
-
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 250;
     font-size: 16px;
-    line-height: 16px;
 
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--white-50);
 }
 
-.login-window #login-button-with-google {
-    /* Login - GOOGLE */
+.login-window .login-button-with-google-div {
+    padding-top: 40px;
+}
 
+.login-window .login-button-with-google {
+    /* Login - GOOGLE */
     box-sizing: border-box;
 
     /* Auto layout */
@@ -273,54 +336,118 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    gap: 20px;
+    padding: 8px;
+    gap: 16px;
     cursor: pointer;
 
-    position: absolute;
-    width: 420px;
-    height: 60px;
-    left: calc(50% - 420px/2);
-    top: 593px;
+    width: 336px;
+    height: 48px;
 
-    font-family: 'Uxum Grotesque';
+    font-family: 'Uxum Grotesque',Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--white-25);
 
     background-color: transparent;
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 10px;
-
+    border: 1px solid var(--white-25);
+    border-radius: 8px;
 }
 
-.login-window #login-button-with-google:hover {
-    background-color: #111928;
+.login-window #hover-state {
+    fill-opacity: 0.25;
+}
+
+.login-window #hover-state:hover {
+    fill-opacity: 1;
+    color: var(--white-100);
+    border-color: var(--white-100);
     transition: 300ms;
 }
 
 
 
-@media screen and (max-width:426px) {
-    .login-window{
-        transform: scale(0.7);
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+/* navbar */
+@media (width < 768px) {
+    nav {
+        height: 90px;
     }
-    .navbar{
-        display: none;
+
+    nav #nav-logo {
+        width: 153px;
     }
-    #email-id-field,
-    #password-field{
-        padding-left: 15px;
-        color: white;
-        font-size: 6vw;
+
+    nav #nav-sign-in-button {
+        width: 114px;
+        height: 48px;
+        font-size: 18px;
+        border-radius: 7.5px;
     }
 }
 
-@media screen and (max-width:376px) {
-    .login-window{
-        transform: scale(0.6);
+/* login window */
+
+@media (width < 768px) {
+    .login-window {
+        width: 374.4px;
+        height: 546px;
     }
 
+    .login-window h1{
+        font-size: 34.56px;
+    }
+
+    .login-window h3{
+        font-size: 17.28px;
+    }
+
+    .login-window .login-window-title{
+        padding-top: 36px;
+    }
+
+    .login-window .input-box {
+        padding-top: 36px;
+    }
+
+    .login-window .input-box .input-box-form{
+        gap: 18px;
+        align-items: center;
+    }
+
+    .login-window .input-box #email-id-field{
+        width: 302.4px;
+    }
+
+    .login-window .input-box #password-field{
+        width: 302.4px;
+    }
+
+    .login-window .reset-password-div {
+        width: 302.4px;
+        margin-top: 8px;
+    }
+    
+    .login-window .login-button-div{
+        padding-top: 36px;
+    }
+
+    .login-window .login-button-div #login-button{
+        width: 302.4px;
+    }
+
+    .login-window .divider-div{
+        width: 302.4px;
+        padding-top: 36px;
+    }
+
+    .login-window .login-button-with-google-div{
+        padding-top: 36px;
+    }
+
+    .login-window .login-button-with-google{
+        width: 302.4px;
+    }
 }

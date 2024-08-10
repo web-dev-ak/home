@@ -1,0 +1,30 @@
+/* BACKGROUND GRID ANIMATION */
+.background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(121, 176, 88, 0.25) 1px, transparent 1px),
+        linear-gradient(to bottom, rgb(121, 176, 88, 0.25) 1px, transparent 1px);
+    background-size: 4em 4em;
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 110%);
+    z-index: -10;
+}
+
+.square {
+    width: 4em;
+    height: 4em;
+    background-color: rgb(121, 176, 88, 0.25);
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.square.visible {
+    opacity: 1;
+}
