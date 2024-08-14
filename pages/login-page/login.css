@@ -285,7 +285,6 @@ nav #nav-sign-in-button:hover {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 16px;
     color: var(--yellow-links);
 }
 
@@ -366,9 +365,6 @@ nav #nav-sign-in-button:hover {
     transition: 300ms;
 }
 
-
-
-
 /* MEDIA QUERIES FOR RESPONSIVENESS */
 /* navbar */
 @media (width < 768px) {
@@ -389,7 +385,6 @@ nav #nav-sign-in-button:hover {
 }
 
 /* login window */
-
 @media (width < 768px) {
     .login-window {
         width: 374.4px;
